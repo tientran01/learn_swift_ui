@@ -28,7 +28,9 @@ struct CustomCategoryItem: View {
             Text(title)
                 .foregroundColor(fontColor)
                 .font(.system(size: 13, weight: .regular))
-                .fixedSize(horizontal: true, vertical: false)
+                .lineLimit(1)
+                .frame(alignment: .leading)
+                .padding(.horizontal, 5)
         }
         .frame(width: width, height: 70)
         .background(Colors.headerBackground)

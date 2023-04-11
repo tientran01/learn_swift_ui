@@ -19,6 +19,10 @@ internal enum Assets {
     internal static let icArrowNext_uiImage = UIImage(named: "ic_arrow_next")!
     internal static let icArrowPrevious = SwiftUI.Image("ic_arrow_previous")
     internal static let icArrowPrevious_uiImage = UIImage(named: "ic_arrow_previous")!
+    internal static let icBus = SwiftUI.Image("ic_bus")
+    internal static let icBus_uiImage = UIImage(named: "ic_bus")!
+    internal static let icHouse = SwiftUI.Image("ic_house")
+    internal static let icHouse_uiImage = UIImage(named: "ic_house")!
     internal static let icMoney = SwiftUI.Image("ic_money")
     internal static let icMoney_uiImage = UIImage(named: "ic_money")!
 }

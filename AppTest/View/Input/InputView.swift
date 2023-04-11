@@ -12,6 +12,8 @@ struct InputView: View {
     var bodyHeight = UIScreen.main.bounds.height * 2 / 4
     var footerHeight = UIScreen.main.bounds.height / 4 + 60
 
+    @StateObject var inputViewModel: InputViewModel
+
     var body: some View {
         VStack {
             headerView()
@@ -90,8 +92,7 @@ struct InputView: View {
                     descView: CustomTextField(
                         username: "",
                         hintText: "Chưa nhập vào",
-                        autocorrectionDisabled: true,
-                        disabled: true
+                        autocorrectionDisabled: true
                     )
                 )
                 Divider()
@@ -138,24 +139,16 @@ struct InputView: View {
                 .frame(width: UIScreen.main.bounds.width / 4, alignment: .leading)
 
             LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(1 ... 5, id: \.self) { _ in
+                ForEach(inputViewModel.listCategories(), id: \.id) { category in
                     CustomCategoryItem(
-                        icon: Assets.icMoney,
-                        iconColor: .red,
-                        title: "Hello",
-                        action: {
-                            print("Hello")
-                        }
+                        icon: category.icon,
+                        iconColor: category.iconColor,
+                        title: category.title,
+                        action: category.action
                     )
                 }
             }
         }
         .padding(10)
-    }
-}
-
-struct InputView_Previews: PreviewProvider {
-    static var previews: some View {
-        InputView()
     }
 }

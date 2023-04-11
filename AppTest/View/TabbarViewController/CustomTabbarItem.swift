@@ -42,7 +42,7 @@ enum CustomItem: String, CaseIterable {
     var contentView: some View {
         switch self {
         case .input:
-            return AnyView(InputView())
+            return AnyView(InputView(inputViewModel: InputViewModel()))
         case .calendar:
             return AnyView(CalendarView())
         case .report:
