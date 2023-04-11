@@ -1,0 +1,14 @@
+input_dir: AppTest/Resources/
+output_dir: AppTest/Resources/Generated/
+## XCAssets
+xcassets:
+  inputs:
+    - Assets.xcassets
+    - Colors.xcassets
+  outputs:
+    templatePath: Templates/xcassets/assets_swift5_swiftui.stencil
+    params:
+       forceProvidesNamespaces: true
+       forceFileNameEnum: true
+    output: XCAssets+Generated.swift
+
