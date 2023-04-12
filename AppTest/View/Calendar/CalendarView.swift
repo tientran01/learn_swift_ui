@@ -10,9 +10,17 @@ import SwiftUI
 struct CalendarView: View {
     var body: some View {
         NavigationView {
-            Text("Calendar")
-                .navigationBarTitle("Calendar Title", displayMode: .automatic)
+            ScrollView {
+                LazyVStack(alignment: .leading) {
+                    ForEach(1 ... 100, id: \.self) {
+                        Text("Row \($0)")
+                    }
+                }
+            }
+            .padding(10)
+            .navigationTitle("Calendar")
         }
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
