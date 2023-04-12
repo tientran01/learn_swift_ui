@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State var username: String = ""
+    @Binding var username: String
     var hintText: String = ""
     var fontSize: CGFloat = 15
     var fontWeight: Font.Weight = .medium
@@ -28,11 +28,5 @@ struct CustomTextField: View {
             .autocorrectionDisabled(autocorrectionDisabled)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .disabled(disabled)
-    }
-}
-
-struct CustomTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTextField()
     }
 }

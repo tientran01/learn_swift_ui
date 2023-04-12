@@ -13,6 +13,8 @@ struct InputView: View {
     var footerHeight = UIScreen.main.bounds.height / 4 + 60
 
     @StateObject var inputViewModel: InputViewModel
+    @StateObject var model: ReportViewModel = ReportViewModel()
+    
 
     var body: some View {
         VStack {
@@ -20,6 +22,7 @@ struct InputView: View {
             bodyView()
             bottomView()
         }
+        .onTapGesture(perform: UIApplication.dismissKeyboard)
     }
 
     var columns: [GridItem] = Array(
@@ -77,7 +80,7 @@ struct InputView: View {
                 InputItemView(
                     title: "Date",
                     descView: CustomTextField(
-                        username: "4.10.2023 (Mon)",
+                        username: $model.myMessage,
                         autocorrectionDisabled: true,
                         multilineTextAlignment: .center,
                         disabled: true
@@ -90,16 +93,17 @@ struct InputView: View {
                 InputItemView(
                     title: "Note",
                     descView: CustomTextField(
-                        username: "",
+                        username: $model.myMessage, 
                         hintText: "Chưa nhập vào",
-                        autocorrectionDisabled: true
+                        autocorrectionDisabled: true,
+                        disabled: true
                     )
                 )
                 Divider()
                 InputItemView(
                     title: "Expense",
                     descView: CustomTextField(
-                        username: "0.00",
+                        username: $model.myMessage,
                         fontSize: 20,
                         fontWeight: .bold,
                         keyboardType: .phonePad,

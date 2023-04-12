@@ -15,6 +15,10 @@
 		D40D346429E3E07F00AAD39B /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D346329E3E07F00AAD39B /* ReportView.swift */; };
 		D40D346729E3E3E300AAD39B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D346629E3E3E300AAD39B /* CustomButton.swift */; };
 		D40D346A29E4046900AAD39B /* InputItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40D346929E4046900AAD39B /* InputItemView.swift */; };
+		D417050D29E7C027008E1CCB /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417050C29E7C027008E1CCB /* MoreViewModel.swift */; };
+		D417050F29E7D664008E1CCB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417050E29E7D664008E1CCB /* Country.swift */; };
+		D417051129E7FBCD008E1CCB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417051029E7FBCD008E1CCB /* UIApplication.swift */; };
+		D417051429E7FD6E008E1CCB /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417051329E7FD6E008E1CCB /* KeyboardResponder.swift */; };
 		D479637E29E457C3006B6A34 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D479637D29E457C3006B6A34 /* CustomTextField.swift */; };
 		D48D581929DFC65500259806 /* AppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D581829DFC65500259806 /* AppTestApp.swift */; };
 		D48D581B29DFC65500259806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D581A29DFC65500259806 /* ContentView.swift */; };
@@ -28,6 +32,7 @@
 		D4CB35B729E51B400075575D /* CustomIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB35B629E51B400075575D /* CustomIcon.swift */; };
 		D4CB35BA29E55BE80075575D /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB35B929E55BE80075575D /* CategoryItem.swift */; };
 		D4CB35BC29E55D2F0075575D /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB35BB29E55D2F0075575D /* InputViewModel.swift */; };
+		D4FB67B229E6AD350023E7FC /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB67B129E6AD350023E7FC /* ReportViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,10 @@
 		D40D346329E3E07F00AAD39B /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		D40D346629E3E3E300AAD39B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		D40D346929E4046900AAD39B /* InputItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItemView.swift; sourceTree = "<group>"; };
+		D417050C29E7C027008E1CCB /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
+		D417050E29E7D664008E1CCB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		D417051029E7FBCD008E1CCB /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		D417051329E7FD6E008E1CCB /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		D479637D29E457C3006B6A34 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D48D581529DFC65500259806 /* AppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48D581829DFC65500259806 /* AppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestApp.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 		D4CB35B629E51B400075575D /* CustomIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcon.swift; sourceTree = "<group>"; };
 		D4CB35B929E55BE80075575D /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		D4CB35BB29E55D2F0075575D /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
+		D4FB67B129E6AD350023E7FC /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D40D346329E3E07F00AAD39B /* ReportView.swift */,
+				D4FB67B129E6AD350023E7FC /* ReportViewModel.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -116,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				D40D345F29E3B70C00AAD39B /* MoreView.swift */,
+				D417050C29E7C027008E1CCB /* MoreViewModel.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -126,6 +138,7 @@
 				D40D346629E3E3E300AAD39B /* CustomButton.swift */,
 				D479637D29E457C3006B6A34 /* CustomTextField.swift */,
 				D4CB35B629E51B400075575D /* CustomIcon.swift */,
+				D417051029E7FBCD008E1CCB /* UIApplication.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -164,7 +177,7 @@
 				D4CB35B829E55BDB0075575D /* Model */,
 				D48D582C29DFFC2600259806 /* Resources */,
 				D48D582629DFF22A00259806 /* View */,
-				D48D581829DFC65500259806 /* AppTestApp.swift */,
+				D4FB67B329E6B7560023E7FC /* App */,
 				D48D581A29DFC65500259806 /* ContentView.swift */,
 				D48D581E29DFC65A00259806 /* Preview Content */,
 			);
@@ -223,8 +236,18 @@
 			isa = PBXGroup;
 			children = (
 				D4CB35B929E55BE80075575D /* CategoryItem.swift */,
+				D417050E29E7D664008E1CCB /* Country.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D4FB67B329E6B7560023E7FC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D48D581829DFC65500259806 /* AppTestApp.swift */,
+				D417051329E7FD6E008E1CCB /* KeyboardResponder.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,12 +369,16 @@
 			files = (
 				D48D582929DFF25800259806 /* CustomTabbarItem.swift in Sources */,
 				D40D346029E3B70C00AAD39B /* MoreView.swift in Sources */,
+				D417051429E7FD6E008E1CCB /* KeyboardResponder.swift in Sources */,
 				D40D345129E3A54F00AAD39B /* CustomTabbar.swift in Sources */,
 				D48D581B29DFC65500259806 /* ContentView.swift in Sources */,
 				D40D346729E3E3E300AAD39B /* CustomButton.swift in Sources */,
 				D40D345429E3B63E00AAD39B /* InputView.swift in Sources */,
 				D40D346429E3E07F00AAD39B /* ReportView.swift in Sources */,
+				D417050F29E7D664008E1CCB /* Country.swift in Sources */,
+				D417051129E7FBCD008E1CCB /* UIApplication.swift in Sources */,
 				D40D346229E3E05700AAD39B /* CalendarView.swift in Sources */,
+				D4FB67B229E6AD350023E7FC /* ReportViewModel.swift in Sources */,
 				D479637E29E457C3006B6A34 /* CustomTextField.swift in Sources */,
 				D48D581929DFC65500259806 /* AppTestApp.swift in Sources */,
 				D40D346A29E4046900AAD39B /* InputItemView.swift in Sources */,
@@ -360,6 +387,7 @@
 				D4CB35B529E515700075575D /* CustomCategoryItem.swift in Sources */,
 				D48D583F29E00DA900259806 /* XCAssets+Generated.swift in Sources */,
 				D4CB35B729E51B400075575D /* CustomIcon.swift in Sources */,
+				D417050D29E7C027008E1CCB /* MoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
