@@ -14,6 +14,7 @@ struct CategoryItem {
     var icon: Image
     var iconColor: Color
     var action: () -> Void
+    var isEdit: Bool = false
 }
 
 

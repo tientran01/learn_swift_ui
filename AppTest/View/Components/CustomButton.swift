@@ -11,12 +11,13 @@ struct CustomButton: View {
     var title: String
     var backgroundColor: Color
     var action: () -> Void
+    var fontColor: Color = Colors.text
 
     var body: some View {
         Button(action: action) {
             Text(title.uppercased())
                 .font(.system(size: 15, weight: .medium))
-                .foregroundColor(Colors.text)
+                .foregroundColor(fontColor)
                 .padding(.vertical, 15)
                 .padding(.horizontal, 60)
         }

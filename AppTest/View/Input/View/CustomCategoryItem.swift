@@ -13,6 +13,7 @@ struct CustomCategoryItem: View {
     var title: String
     var fontColor: Color = Colors.text
     var action: () -> Void
+    var isEdit: Bool = false
 
     var width = UIScreen.main.bounds.width / 3 - 10
 
@@ -21,10 +22,10 @@ struct CustomCategoryItem: View {
             CustomIcon(
                 icon: icon,
                 iconColor: iconColor,
-                width: 30,
-                height: 30
+                width: isEdit ? 20 : 30,
+                height: isEdit ? 20 : 30
             )
-            
+
             Text(title)
                 .foregroundColor(fontColor)
                 .font(.system(size: 13, weight: .regular))
@@ -35,8 +36,5 @@ struct CustomCategoryItem: View {
         .frame(width: width, height: 70)
         .background(Colors.headerBackground)
         .cornerRadius(15)
-        .onTapGesture {
-            print("Hello")
-        }
     }
 }
