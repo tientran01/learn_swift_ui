@@ -28,6 +28,10 @@
 		D48D583029DFFC5600259806 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D582F29DFFC5600259806 /* Colors.xcassets */; };
 		D48D583629E0021100259806 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48D583529E0021100259806 /* swiftgen.yml */; };
 		D48D583F29E00DA900259806 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D583E29E00DA900259806 /* XCAssets+Generated.swift */; };
+		D4B12D6D29E8F52000BE4813 /* CustomHeaderTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D6C29E8F52000BE4813 /* CustomHeaderTabbar.swift */; };
+		D4B12D6F29E8F9C800BE4813 /* HeaderTabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D6E29E8F9C800BE4813 /* HeaderTabbarItem.swift */; };
+		D4B12D7729E933FB00BE4813 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D7629E933FB00BE4813 /* DatePickerView.swift */; };
+		D4B12D7929E944BF00BE4813 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D7829E944BF00BE4813 /* DatePickerTextField.swift */; };
 		D4CB35B529E515700075575D /* CustomCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB35B429E515700075575D /* CustomCategoryItem.swift */; };
 		D4CB35B729E51B400075575D /* CustomIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB35B629E51B400075575D /* CustomIcon.swift */; };
 		D4CB35BA29E55BE80075575D /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB35B929E55BE80075575D /* CategoryItem.swift */; };
@@ -60,6 +64,10 @@
 		D48D582F29DFFC5600259806 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D48D583529E0021100259806 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		D48D583E29E00DA900259806 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		D4B12D6C29E8F52000BE4813 /* CustomHeaderTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTabbar.swift; sourceTree = "<group>"; };
+		D4B12D6E29E8F9C800BE4813 /* HeaderTabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabbarItem.swift; sourceTree = "<group>"; };
+		D4B12D7629E933FB00BE4813 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		D4B12D7829E944BF00BE4813 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 		D4CB35B429E515700075575D /* CustomCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryItem.swift; sourceTree = "<group>"; };
 		D4CB35B629E51B400075575D /* CustomIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcon.swift; sourceTree = "<group>"; };
 		D4CB35B929E55BE80075575D /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 				D479637D29E457C3006B6A34 /* CustomTextField.swift */,
 				D4CB35B629E51B400075575D /* CustomIcon.swift */,
 				D417051029E7FBCD008E1CCB /* UIApplication.swift */,
+				D4B12D7829E944BF00BE4813 /* DatePickerTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -148,6 +157,9 @@
 			children = (
 				D40D346929E4046900AAD39B /* InputItemView.swift */,
 				D4CB35B429E515700075575D /* CustomCategoryItem.swift */,
+				D4B12D6C29E8F52000BE4813 /* CustomHeaderTabbar.swift */,
+				D4B12D6E29E8F9C800BE4813 /* HeaderTabbarItem.swift */,
+				D4B12D7629E933FB00BE4813 /* DatePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +385,10 @@
 				D40D345129E3A54F00AAD39B /* CustomTabbar.swift in Sources */,
 				D48D581B29DFC65500259806 /* ContentView.swift in Sources */,
 				D40D346729E3E3E300AAD39B /* CustomButton.swift in Sources */,
+				D4B12D7929E944BF00BE4813 /* DatePickerTextField.swift in Sources */,
+				D4B12D7729E933FB00BE4813 /* DatePickerView.swift in Sources */,
+				D4B12D6D29E8F52000BE4813 /* CustomHeaderTabbar.swift in Sources */,
+				D4B12D6F29E8F9C800BE4813 /* HeaderTabbarItem.swift in Sources */,
 				D40D345429E3B63E00AAD39B /* InputView.swift in Sources */,
 				D40D346429E3E07F00AAD39B /* ReportView.swift in Sources */,
 				D417050F29E7D664008E1CCB /* Country.swift in Sources */,

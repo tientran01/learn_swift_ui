@@ -10,17 +10,16 @@ import SwiftUI
 struct InputView: View {
     var width = UIScreen.main.bounds.width
     var bodyHeight = UIScreen.main.bounds.height * 2 / 4
-    var footerHeight = UIScreen.main.bounds.height / 4 + 60
-
+    var footerHeight = UIScreen.main.bounds.height * 1 / 4 + 60
+    @State var currentTab: Int = 0
     @StateObject var inputViewModel: InputViewModel
     @StateObject var model: ReportViewModel = ReportViewModel()
-    
 
     var body: some View {
         VStack {
             headerView()
             bodyView()
-            bottomView()
+            bottomIncomeView()
         }
         .onTapGesture(perform: UIApplication.dismissKeyboard)
     }
@@ -34,37 +33,14 @@ struct InputView: View {
         return UIScreen.main.bounds.height - bodyHeight - footerHeight
     }
 
-    private func customTabHeader() -> some View {
-        HStack(spacing: 0) {
-            HStack {
-                Text("Expense")
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(Colors.text)
-            }
-            .frame(width: width / 4, height: headerHeight() / 3)
-            .background(Colors.blue)
-
-            HStack {
-                Text("Income")
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(Colors.text)
-            }
-            .frame(width: width / 4, height: headerHeight() / 3)
-            .background(Colors.background)
-        }
-        .frame(width: width / 2, height: headerHeight() / 3)
-        .background(
-            Colors.background
-        )
-        .cornerRadius(10)
-        .padding(.bottom, 5)
-    }
-
     private func headerView() -> some View {
         HStack(alignment: .center) {
             Spacer()
             Spacer()
-            customTabHeader()
+            CustomHeaderTabbar(
+                height: headerHeight(),
+                currentTab: self.$currentTab
+            )
             Spacer()
             Image(systemName: "pencil.tip")
                 .foregroundColor(Colors.ceruleanBlue)
@@ -75,6 +51,16 @@ struct InputView: View {
     }
 
     private func bodyView() -> some View {
+        TabView(selection: $currentTab) {
+            expensiveView().tag(0)
+            incomeView().tag(1)
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .frame(width: width, height: bodyHeight)
+        .background(Colors.background)
+    }
+
+    private func expensiveView() -> some View {
         ScrollView(.vertical) {
             VStack(spacing: 0) {
                 InputItemView(
@@ -93,7 +79,7 @@ struct InputView: View {
                 InputItemView(
                     title: "Note",
                     descView: CustomTextField(
-                        username: $model.myMessage, 
+                        username: $model.myMessage,
                         hintText: "Chưa nhập vào",
                         autocorrectionDisabled: true,
                         disabled: true
@@ -114,18 +100,106 @@ struct InputView: View {
                     trailingIcon: true
                 )
                 Divider()
-                listCategories()
+                listCategoriesOfExpense()
             }
         }
-        .frame(width: width, height: bodyHeight)
-        .background(Colors.background)
     }
 
-    private func bottomView() -> some View {
+    private func incomeView() -> some View {
+        ScrollView(.vertical) {
+            VStack(spacing: 0) {
+                InputItemView(
+                    title: "Date",
+                    descView: CustomTextField(
+                        username: $model.myMessage,
+                        autocorrectionDisabled: true,
+                        multilineTextAlignment: .center,
+                        disabled: true
+                    ),
+                    trailingContentItem: .date,
+                    leadingIcon: true,
+                    trailingIcon: true
+                )
+                Divider()
+                InputItemView(
+                    title: "Note",
+                    descView: CustomTextField(
+                        username: $model.myMessage,
+                        hintText: "Chưa nhập vào",
+                        autocorrectionDisabled: true,
+                        disabled: true
+                    )
+                )
+                Divider()
+                InputItemView(
+                    title: "Income",
+                    descView: CustomTextField(
+                        username: $model.myMessage,
+                        fontSize: 20,
+                        fontWeight: .bold,
+                        keyboardType: .phonePad,
+                        autocorrectionDisabled: true,
+                        disabled: true
+                    ),
+                    trailingContentItem: .expense,
+                    trailingIcon: true
+                )
+                Divider()
+                listCategoriesOfIncome()
+//                DatePickerView()
+            }
+        }
+    }
+
+    private func listCategoriesOfExpense() -> some View {
+        VStack(alignment: .leading) {
+            Text("Category")
+                .foregroundColor(Colors.text)
+                .font(.system(size: 14, weight: .semibold))
+                .frame(width: UIScreen.main.bounds.width / 4, alignment: .leading)
+
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(inputViewModel.listCategoriesOfExpense(), id: \.id) { category in
+                    CustomCategoryItem(
+                        icon: category.icon,
+                        iconColor: category.iconColor,
+                        title: category.title,
+                        action: category.action,
+                        isEdit: category.isEdit
+                    )
+                }
+            }
+        }
+        .padding(10)
+    }
+
+    private func listCategoriesOfIncome() -> some View {
+        VStack(alignment: .leading) {
+            Text("Category")
+                .foregroundColor(Colors.text)
+                .font(.system(size: 14, weight: .semibold))
+                .frame(width: UIScreen.main.bounds.width / 4, alignment: .leading)
+
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(inputViewModel.listCategoriesOfIncome(), id: \.id) { category in
+                    CustomCategoryItem(
+                        icon: category.icon,
+                        iconColor: category.iconColor,
+                        title: category.title,
+                        action: category.action,
+                        isEdit: category.isEdit
+                    )
+                }
+            }
+        }
+        .padding(10)
+    }
+
+    private func bottomExpenseView() -> some View {
         VStack {
             CustomButton(
                 title: "Submit",
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.ceruleanBlue,
                 action: {
                     print("Hello")
                 })
@@ -135,24 +209,19 @@ struct InputView: View {
         .padding(.top, 0)
     }
 
-    private func listCategories() -> some View {
-        VStack(alignment: .leading) {
-            Text("Category")
-                .foregroundColor(Colors.text)
-                .font(.system(size: 14, weight: .semibold))
-                .frame(width: UIScreen.main.bounds.width / 4, alignment: .leading)
-
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(inputViewModel.listCategories(), id: \.id) { category in
-                    CustomCategoryItem(
-                        icon: category.icon,
-                        iconColor: category.iconColor,
-                        title: category.title,
-                        action: category.action
-                    )
-                }
-            }
+    private func bottomIncomeView() -> some View {
+        VStack {
+            CustomButton(
+                title: "Income",
+                backgroundColor: Colors.ceruleanBlue,
+                action: {
+                    print("Hello")
+                },
+                fontColor: Colors.white
+            )
         }
-        .padding(10)
+        .frame(width: width, height: footerHeight, alignment: .top)
+        .background(Colors.background)
+        .padding(.top, 0)
     }
 }
