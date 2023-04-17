@@ -9,22 +9,25 @@ import Combine
 import Foundation
 
 class MoreViewModel: ObservableObject {
-    let passthroughSubject = PassthroughSubject<String, Error>()
-    private var cancellables = Set<AnyCancellable>()
+    @Published var users: [User] = []
+    func fetchUser() {
+        let userUrlString = "https://jsonplaceholder.typicode.com/users"
+        if let url = URL(string: userUrlString) {
+            URLSession
+                .shared
+                .dataTask(with: url) { [weak self] data, _, error in
+                    if error != nil {
+                    } else {
+                        let decode = JSONDecoder()
+                        decode.keyDecodingStrategy = .convertFromSnakeCase
 
-    init() {
-        passthroughSubject.sink(
-            receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    print("Finished")
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-                print(completion)
-            }, receiveValue: { value in
-                print(value)
-            }
-        ).store(in: &cancellables)
+                        if let data = data,
+                           let users = try? decode.decode([User].self, from: data) {
+                            self?.users = users
+                        } else {
+                        }
+                    }
+                }.resume()
+        }
     }
 }

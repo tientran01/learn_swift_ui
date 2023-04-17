@@ -14,13 +14,14 @@ struct CustomButton: View {
     var fontColor: Color = Colors.text
 
     var body: some View {
-        Button(action: action) {
+        Button(action: action, label: {
             Text(title.uppercased())
-                .font(.system(size: 15, weight: .medium))
-                .foregroundColor(fontColor)
                 .padding(.vertical, 15)
                 .padding(.horizontal, 60)
-        }
+        })
+        .labelsHidden()
+        .font(.system(size: 15, weight: .medium))
+        .foregroundColor(fontColor)
         .background(backgroundColor)
         .cornerRadius(10)
         .padding(.top, 40)
