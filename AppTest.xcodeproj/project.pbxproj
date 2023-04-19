@@ -28,6 +28,10 @@
 		D48D583029DFFC5600259806 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D582F29DFFC5600259806 /* Colors.xcassets */; };
 		D48D583629E0021100259806 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48D583529E0021100259806 /* swiftgen.yml */; };
 		D48D583F29E00DA900259806 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D583E29E00DA900259806 /* XCAssets+Generated.swift */; };
+		D49F0A1129ECFD1C00723CA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F0A1029ECFD1C00723CA2 /* User.swift */; };
+		D49F0A1429ED1D2600723CA2 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = D49F0A1329ED1D2600723CA2 /* WaterfallGrid */; };
+		D49F0A1A29ED2DAF00723CA2 /* CustomUserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F0A1929ED2DAF00723CA2 /* CustomUserCardView.swift */; };
+		D49F0A1C29ED36B200723CA2 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F0A1B29ED36B200723CA2 /* UserDetailView.swift */; };
 		D4B12D6D29E8F52000BE4813 /* CustomHeaderTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D6C29E8F52000BE4813 /* CustomHeaderTabbar.swift */; };
 		D4B12D6F29E8F9C800BE4813 /* HeaderTabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D6E29E8F9C800BE4813 /* HeaderTabbarItem.swift */; };
 		D4B12D7729E933FB00BE4813 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B12D7629E933FB00BE4813 /* DatePickerView.swift */; };
@@ -64,6 +68,9 @@
 		D48D582F29DFFC5600259806 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D48D583529E0021100259806 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		D48D583E29E00DA900259806 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		D49F0A1029ECFD1C00723CA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D49F0A1929ED2DAF00723CA2 /* CustomUserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserCardView.swift; sourceTree = "<group>"; };
+		D49F0A1B29ED36B200723CA2 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		D4B12D6C29E8F52000BE4813 /* CustomHeaderTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTabbar.swift; sourceTree = "<group>"; };
 		D4B12D6E29E8F9C800BE4813 /* HeaderTabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabbarItem.swift; sourceTree = "<group>"; };
 		D4B12D7629E933FB00BE4813 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2916A6AF8AA4C90EFE78D2E0 /* Pods_AppTest.framework in Frameworks */,
+				D49F0A1429ED1D2600723CA2 /* WaterfallGrid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +142,7 @@
 		D40D345C29E3B6F800AAD39B /* More */ = {
 			isa = PBXGroup;
 			children = (
+				D49F0A1829ED2D9C00723CA2 /* View */,
 				D40D345F29E3B70C00AAD39B /* MoreView.swift */,
 				D417050C29E7C027008E1CCB /* MoreViewModel.swift */,
 			);
@@ -244,11 +253,21 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		D49F0A1829ED2D9C00723CA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D49F0A1929ED2DAF00723CA2 /* CustomUserCardView.swift */,
+				D49F0A1B29ED36B200723CA2 /* UserDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D4CB35B829E55BDB0075575D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D4CB35B929E55BE80075575D /* CategoryItem.swift */,
 				D417050E29E7D664008E1CCB /* Country.swift */,
+				D49F0A1029ECFD1C00723CA2 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +299,9 @@
 			dependencies = (
 			);
 			name = AppTest;
+			packageProductDependencies = (
+				D49F0A1329ED1D2600723CA2 /* WaterfallGrid */,
+			);
 			productName = AppTest;
 			productReference = D48D581529DFC65500259806 /* AppTest.app */;
 			productType = "com.apple.product-type.application";
@@ -308,6 +330,9 @@
 				Base,
 			);
 			mainGroup = D48D580C29DFC65500259806;
+			packageReferences = (
+				D49F0A1229ED1D2600723CA2 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+			);
 			productRefGroup = D48D581629DFC65500259806 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,10 +404,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49F0A1129ECFD1C00723CA2 /* User.swift in Sources */,
 				D48D582929DFF25800259806 /* CustomTabbarItem.swift in Sources */,
 				D40D346029E3B70C00AAD39B /* MoreView.swift in Sources */,
 				D417051429E7FD6E008E1CCB /* KeyboardResponder.swift in Sources */,
+				D49F0A1C29ED36B200723CA2 /* UserDetailView.swift in Sources */,
 				D40D345129E3A54F00AAD39B /* CustomTabbar.swift in Sources */,
+				D49F0A1A29ED2DAF00723CA2 /* CustomUserCardView.swift in Sources */,
 				D48D581B29DFC65500259806 /* ContentView.swift in Sources */,
 				D40D346729E3E3E300AAD39B /* CustomButton.swift in Sources */,
 				D4B12D7929E944BF00BE4813 /* DatePickerTextField.swift in Sources */,
@@ -614,6 +642,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D49F0A1229ED1D2600723CA2 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D49F0A1329ED1D2600723CA2 /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D49F0A1229ED1D2600723CA2 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D48D580D29DFC65500259806 /* Project object */;
 }
