@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @State private var date = Date()
+
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack(alignment: .leading) {
-                    ForEach(1 ... 100, id: \.self) {
-                        Text("Row \($0)")
-                    }
+            VStack {
+                DatePicker(
+                    selection: $date,
+                    in: ...Date(),
+                    displayedComponents: .date
+                ) {
+                    Text("Choose a date")
                 }
             }
             .padding(10)

@@ -14,6 +14,7 @@ struct InputView: View {
     @State var currentTab: Int = 0
     @StateObject var inputViewModel: InputViewModel
     @StateObject var model: ReportViewModel = ReportViewModel()
+    @State private var date = Date()
 
     var body: some View {
         VStack {
@@ -71,7 +72,7 @@ struct InputView: View {
                         multilineTextAlignment: .center,
                         disabled: true
                     ),
-                    trailingContentItem: .date,
+                    inputItem: .date,
                     leadingIcon: true,
                     trailingIcon: true
                 )
@@ -96,7 +97,7 @@ struct InputView: View {
                         autocorrectionDisabled: true,
                         disabled: true
                     ),
-                    trailingContentItem: .expense,
+                    inputItem: .expense,
                     trailingIcon: true
                 )
                 Divider()
@@ -110,13 +111,14 @@ struct InputView: View {
             VStack(spacing: 0) {
                 InputItemView(
                     title: "Date",
-                    descView: CustomTextField(
-                        username: $model.myMessage,
-                        autocorrectionDisabled: true,
-                        multilineTextAlignment: .center,
-                        disabled: true
-                    ),
-                    trailingContentItem: .date,
+                    descView: DatePicker(
+                        selection: $date,
+                        in: ...Date(),
+                        displayedComponents: .date
+                    ) {}
+                    .accentColor(Colors.text)
+                    .padding(.horizontal, 40),
+                    inputItem: .date,
                     leadingIcon: true,
                     trailingIcon: true
                 )
@@ -141,12 +143,11 @@ struct InputView: View {
                         autocorrectionDisabled: true,
                         disabled: true
                     ),
-                    trailingContentItem: .expense,
+                    inputItem: .expense,
                     trailingIcon: true
                 )
                 Divider()
                 listCategoriesOfIncome()
-//                DatePickerView()
             }
         }
     }

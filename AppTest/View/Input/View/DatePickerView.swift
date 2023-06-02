@@ -9,15 +9,30 @@ import SwiftUI
 
 struct DatePickerView: View {
     @State var date: Date = Date()
+    @State var showPicker: Bool = false
+
+    private func dateFormatter() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
+
     var body: some View {
-        ZStack {
-            Colors.ceruleanBlue.edgesIgnoringSafeArea(.all)
-            DatePicker(selection: $date, displayedComponents: .date) {
+        Button(
+            action: {
+                showPicker.toggle()
+            },
+            label: {
+                Text(dateFormatter())
+            })
+            .onTapGesture {
+                DatePicker(
+                    selection: $date,
+                    in: ...Date(),
+                    displayedComponents: .date
+                ) {}
             }
-            .padding(10)
-            .labelsHidden()
-            .datePickerStyle(WheelDatePickerStyle())
-        }
     }
 }
 

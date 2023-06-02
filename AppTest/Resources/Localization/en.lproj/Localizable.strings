@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SwiftUITemplate
+
+  Created by tomosia on 6/2/23.
+  
+*/
+//MainView
+"Main.Tabbar.Task" = "Task";
+"Main.Tabbar.Chat" = "Chat";
+"Main.Tabbar.Notification" = "Notification";
+"Main.Tabbar.Profile" = "Profile";

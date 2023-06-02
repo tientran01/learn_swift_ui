@@ -5,11 +5,11 @@
 //  Created by tomosia on 4/10/23.
 //
 
-enum TrailingContentItem: String, CaseIterable {
+enum InputItem: String, CaseIterable {
     case date
     case expense
 
-    var icon: Image {
+    var trailinIcon: Image {
         switch self {
         case .date:
             return Assets.icArrowNext
@@ -26,12 +26,12 @@ struct InputItemView: View {
     var height: CGFloat = 55
     var align: Alignment = .leading
     var descView: any View
-    var trailingContentItem: TrailingContentItem = .date
+    var inputItem: InputItem = .date
     var leadingIcon: Bool = false
     var trailingIcon: Bool = false
 
     private func iconHeight() -> CGFloat {
-        if trailingContentItem == TrailingContentItem.date {
+        if inputItem == InputItem.date {
             return 15
         }
         return 30
@@ -56,7 +56,7 @@ struct InputItemView: View {
                 .padding(.trailing, trailingIcon ? 0 : 15)
 
             trailingIcon ? CustomIcon(
-                icon: trailingContentItem.icon,
+                icon: inputItem.trailinIcon,
                 width: iconHeight(),
                 height: iconHeight()
             ).padding(.trailing, 10)

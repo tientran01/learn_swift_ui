@@ -1,6 +1,60 @@
 {
   "pins" : [
     {
+      "identity" : "coordinator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/Coordinator",
+      "state" : {
+        "branch" : "master",
+        "revision" : "67d49ff658f3bfba9d028a6317476c65fa4e6163"
+      }
+    },
+    {
+      "identity" : "merge",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/Merge.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e7f3492f230d638c348330d2516bdf69270c5a2c"
+      }
+    },
+    {
+      "identity" : "swallow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/Swallow.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "2583864ed23bdb8f131cc615362d2fb3f306d3b6"
+      }
+    },
+    {
+      "identity" : "swift-async-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-async-algorithms",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b3394663fd8ad9c701cbfcffcaedb64afc7e92be"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections",
+      "state" : {
+        "branch" : "main",
+        "revision" : "939cfd25234472b4dc91c3caeab304d15bca9a73"
+      }
+    },
+    {
+      "identity" : "swiftuix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/SwiftUIX.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5e32dd82287057efb6b23d61946874dc2113a5e1"
+      }
+    },
+    {
       "identity" : "waterfallgrid",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/paololeonardi/WaterfallGrid",
