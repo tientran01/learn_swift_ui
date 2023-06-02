@@ -16,7 +16,7 @@ struct CustomTextField: View {
     var autocorrectionDisabled: Bool = false
     var multilineTextAlignment: TextAlignment = .leading
     var lineLimit: Int?
-    var disabled: Bool = false
+    @State var disabled: Bool = false
 
     var body: some View {
         TextField(hintText, text: $username)

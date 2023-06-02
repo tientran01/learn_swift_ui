@@ -19,12 +19,20 @@ internal enum Assets {
     internal static let icArrowNext_uiImage = UIImage(named: "ic_arrow_next")!
     internal static let icArrowPrevious = SwiftUI.Image("ic_arrow_previous")
     internal static let icArrowPrevious_uiImage = UIImage(named: "ic_arrow_previous")!
+    internal static let icBell = SwiftUI.Image("ic_bell")
+    internal static let icBell_uiImage = UIImage(named: "ic_bell")!
     internal static let icBus = SwiftUI.Image("ic_bus")
     internal static let icBus_uiImage = UIImage(named: "ic_bus")!
+    internal static let icChat = SwiftUI.Image("ic_chat")
+    internal static let icChat_uiImage = UIImage(named: "ic_chat")!
     internal static let icHouse = SwiftUI.Image("ic_house")
     internal static let icHouse_uiImage = UIImage(named: "ic_house")!
+    internal static let icListTask = SwiftUI.Image("ic_list_task")
+    internal static let icListTask_uiImage = UIImage(named: "ic_list_task")!
     internal static let icMoney = SwiftUI.Image("ic_money")
     internal static let icMoney_uiImage = UIImage(named: "ic_money")!
+    internal static let icUser = SwiftUI.Image("ic_user")
+    internal static let icUser_uiImage = UIImage(named: "ic_user")!
 }
 internal enum Colors {
     internal static let background = ColorAsset(name: "background").color
@@ -32,6 +40,8 @@ internal enum Colors {
     internal static let blue = ColorAsset(name: "blue").color
     internal static let ceruleanBlue = ColorAsset(name: "ceruleanBlue").color
     internal static let headerBackground = ColorAsset(name: "headerBackground").color
+    internal static let menthol = ColorAsset(name: "menthol").color
+    internal static let russianGreen = ColorAsset(name: "russianGreen").color
     internal static let text = ColorAsset(name: "text").color
     internal static let white = ColorAsset(name: "white").color
 }
